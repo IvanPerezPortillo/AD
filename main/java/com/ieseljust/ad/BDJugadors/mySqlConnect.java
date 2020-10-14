@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 
 public class mySqlConnect{
-    //ejercicio de consultas en bbdd
+    //ejercicio de consultas en bbdd con dos consultas
     public static void main(String[] args) throws ClassNotFoundException, SQLException{
      
         Class.forName("com.mysql.cj.jdbc.Driver");
