@@ -3,9 +3,7 @@ package com.ieseljust.ad.BDJugadors;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLDataException;
 import java.sql.SQLException;
-import java.sql.SQLFeatureNotSupportedException;
 
 
 public class mySqlConnect{
@@ -18,8 +16,7 @@ public class mySqlConnect{
         Connection conn = DriverManager.getConnection(connectionUrl);
 
       
-        ResultSet rs = conn.prepareStatement("show tables");
-            executeQuery();
+        ResultSet rs = conn.prepareStatement("show tables").executeQuery();
         System.out.println("\nTaules de la base de dades:\n");
 
         while (rs.next()) {
@@ -32,7 +29,7 @@ public class mySqlConnect{
         rs = conn.prepareStatement("select * from Genere").executeQuery();
     
         while (rs.next()) {
-            String id = rs.getInt(1);
+            String id = rs.getString(1);
             String nom = rs.getString(2);
             String desc = rs.getString(3);
             System.out.println(id+ " "+ nom+ " "+desc);
